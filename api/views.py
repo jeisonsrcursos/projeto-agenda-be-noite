@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from rest_framework import generics
+from rest_framework import generics, viewsets
 
 from api.models import Pessoa
 from api.serializers import PessoaSerializers
@@ -12,3 +12,11 @@ class PessoaListarCriarView(generics.ListCreateAPIView):
 class PessoaEditarBuscarDeletarView(generics.RetrieveUpdateDestroyAPIView):
     queryset = Pessoa.objects.all()
     serializer_class = PessoaSerializers
+
+
+# API Versão 2
+class PessoaView(viewsets.ModelViewSet):
+    # Já fornece: GET | POST | PUT | PATCH | DELETE
+    queryset = Pessoa.objects.all()
+    serializer_class = PessoaSerializers
+
