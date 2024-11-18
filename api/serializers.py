@@ -7,6 +7,7 @@ class PessoaSerializers(serializers.ModelSerializer):
     class Meta:
         model = Pessoa
         fields = (
+            'id',
             'nome',
             'endereco',
             'bairro',
@@ -18,6 +19,7 @@ class ContatoSerializer(serializers.ModelSerializer):
     class Meta:
         model = Contato
         fields = (
+            'id',
             'pessoa',
             'contato',
             'tipo',

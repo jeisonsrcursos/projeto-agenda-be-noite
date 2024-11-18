@@ -1,2 +1,4 @@
 .venv
 .idea
+agenda_be_n/__pycache__/
+api/__pycache__/
